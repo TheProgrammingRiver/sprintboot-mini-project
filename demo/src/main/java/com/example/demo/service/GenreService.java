@@ -21,7 +21,7 @@ public class GenreService {
     public Genre fetchGenre(Long id) {
         return repo.findById(id).orElse(null);
     }
-    
+
     public Genre reviseGenre(Long id, Genre updatedGenre) {
         if (repo.existsById(id)) {
             updatedGenre.setId(id);
@@ -29,5 +29,8 @@ public class GenreService {
         }
         return null; // Couldn't find the genre.
     }
-
+    
+    public Iterable<Genre> getAllTheGenres() {
+        return repo.findAll();
+    }
 }
