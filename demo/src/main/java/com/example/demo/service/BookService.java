@@ -13,4 +13,8 @@ public class BookService {
     public Book addNewBook(Book newBook) {
         return bookRepo.save(newBook);
     }
+
+    public void removeBook(Long bookId) {
+        bookRepo.deleteById(bookId);
+    }
 }
