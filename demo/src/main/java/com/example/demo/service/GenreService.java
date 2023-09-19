@@ -5,6 +5,8 @@ import com.example.demo.repository.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GenreService {
     @Autowired
@@ -29,8 +31,8 @@ public class GenreService {
         }
         return null; // Couldn't find the genre.
     }
-    
-    public Iterable<Genre> getAllTheGenres() {
+
+    public List<Genre> getAllGenres() {
         return repo.findAll();
     }
 }
