@@ -17,4 +17,8 @@ public class UserService {
     public void removeUser(Long userId) {
         userRepo.deleteById(userId);
     }
+    
+    public User fetchUser(Long id) {
+        return userRepo.findById(id).orElse(null);
+    }
 }
