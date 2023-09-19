@@ -22,9 +22,15 @@ public class GenreController {
     public Genre addNewGenre(@RequestBody Genre genre) {
         return genreSrv.addNewGenre(genre);
     }
-    
+
     @GetMapping("/")
     public List<Genre> getAllTheGenres() {
         return genreSrv.getAllGenres();
+    }
+
+    // Just want one genre? You got it.
+    @GetMapping("/{id}")
+    public Genre fetchGenre(@PathVariable Long id) {
+        return genreSrv.fetchGenre(id);
     }
 }
