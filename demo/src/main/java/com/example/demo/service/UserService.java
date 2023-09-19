@@ -5,6 +5,8 @@ import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -21,7 +23,7 @@ public class UserService {
     public User fetchUser(Long id) {
         return userRepo.findById(id).orElse(null);
     }
-    
+
     public User updateUserDeets(Long id, User updatedUser) {
         if (userRepo.existsById(id)) {
             updatedUser.setId(id);
@@ -29,4 +31,9 @@ public class UserService {
         }
         return null; // Couldn't find the user
     }
+    
+    public List<User> getAllUsers() {
+        return userRepo.findAll();
+    }
+
 }

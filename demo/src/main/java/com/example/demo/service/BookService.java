@@ -32,7 +32,7 @@ public class BookService {
         return null; // No book found.
     }
 
-    public List<Book> fetchAllBooks() {
+    public List<Book> getAllBooks() {
         return bookRepo.findAll();
     }
 }
