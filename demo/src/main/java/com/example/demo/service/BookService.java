@@ -17,4 +17,8 @@ public class BookService {
     public void removeBook(Long bookId) {
         bookRepo.deleteById(bookId);
     }
+
+    public Book fetchBook(Long id) {
+        return bookRepo.findById(id).orElse(null);
+    }
 }
