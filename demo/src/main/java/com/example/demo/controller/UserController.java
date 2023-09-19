@@ -27,4 +27,9 @@ public class UserController {
     public List<User> getAll() {
         return userSrv.getAllUsers();
     }
+
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+        return userSrv.updateUser(id, user);
+    }
 }
