@@ -15,4 +15,14 @@ public class JwtUtil {
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
     }
+
+    public Boolean validateToken(String token, String username) {
+        final String decodedUsername = Jwts.parser()
+                .setSigningKey(SECRET_KEY)
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+
+        return username.equals(decodedUsername);
+    }
 }
