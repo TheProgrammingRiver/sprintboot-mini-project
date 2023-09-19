@@ -9,8 +9,12 @@ import org.springframework.stereotype.Service;
 public class GenreService {
     @Autowired
     private GenreRepository repo;
-    
+
     public Genre addNewGenre(Genre newGenre) {
         return repo.save(newGenre);
+    }
+
+    public void removeGenre(Long genreId) {
+        repo.deleteById(genreId);
     }
 }
