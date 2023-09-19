@@ -27,7 +27,7 @@ public class GenreController {
     public List<Genre> getAllTheGenres() {
         return genreSrv.getAllGenres();
     }
-    
+
     @GetMapping("/{id}")
     public Genre fetchGenre(@PathVariable Long id) {
         return genreSrv.fetchGenre(id);
