@@ -27,10 +27,14 @@ public class GenreController {
     public List<Genre> getAllTheGenres() {
         return genreSrv.getAllGenres();
     }
-
-    // Just want one genre? You got it.
+    
     @GetMapping("/{id}")
     public Genre fetchGenre(@PathVariable Long id) {
         return genreSrv.fetchGenre(id);
+    }
+
+    @PutMapping("/{id}")
+    public Genre updateGenre(@PathVariable Long id, @RequestBody Genre genre) {
+        return genreSrv.updateGenre(id, genre);
     }
 }

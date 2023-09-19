@@ -24,7 +24,7 @@ public class GenreService {
         return repo.findById(id).orElse(null);
     }
 
-    public Genre reviseGenre(Long id, Genre updatedGenre) {
+    public Genre updateGenre(Long id, Genre updatedGenre) {
         if (repo.existsById(id)) {
             updatedGenre.setId(id);
             return repo.save(updatedGenre);
