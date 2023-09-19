@@ -17,4 +17,9 @@ public class GenreService {
     public void removeGenre(Long genreId) {
         repo.deleteById(genreId);
     }
+
+    public Genre fetchGenre(Long id) {
+        return repo.findById(id).orElse(null);
+    }
+
 }
