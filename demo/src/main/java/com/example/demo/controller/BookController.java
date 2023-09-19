@@ -22,10 +22,16 @@ public class BookController {
     public Book addNewBook(@RequestBody Book book) {
         return bookSrv.addNewBook(book);
     }
-    
+
     @GetMapping("/")
     public List<Book> fetchAllBooks() {
         return bookSrv.getAllBooks();
     }
+    
+    @GetMapping("/{id}")
+    public Book fetchBook(@PathVariable Long id) {
+        return bookSrv.fetchBook(id);
+    }
+
 
 }
