@@ -24,14 +24,14 @@ public class UserService {
         return userRepo.findById(id).orElse(null);
     }
 
-    public User updateUserDeets(Long id, User updatedUser) {
+    public User updateUser(Long id, User updatedUser) {
         if (userRepo.existsById(id)) {
             updatedUser.setId(id);
             return userRepo.save(updatedUser);
         }
         return null; // Couldn't find the user
     }
-    
+
     public List<User> getAllUsers() {
         return userRepo.findAll();
     }
