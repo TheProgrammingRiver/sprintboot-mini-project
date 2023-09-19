@@ -27,11 +27,14 @@ public class BookController {
     public List<Book> fetchAllBooks() {
         return bookSrv.getAllBooks();
     }
-    
+
     @GetMapping("/{id}")
     public Book fetchBook(@PathVariable Long id) {
         return bookSrv.fetchBook(id);
     }
 
-
+    @PutMapping("/{id}")
+    public Book updateBookInfo(@PathVariable Long id, @RequestBody Book book) {
+        return bookSrv.updateBookInfo(id, book);
+    }
 }
