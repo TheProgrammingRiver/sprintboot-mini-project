@@ -28,6 +28,11 @@ public class UserController {
         return userSrv.getAllUsers();
     }
 
+    @GetMapping("/{id}")
+    public User fetchUser(@PathVariable Long id) {
+        return userSrv.fetchUser(id);
+    }
+
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
         return userSrv.updateUser(id, user);
