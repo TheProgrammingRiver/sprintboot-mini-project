@@ -13,4 +13,8 @@ public class UserService {
     public User addNewUser(User newUser) {
         return userRepo.save(newUser);
     }
+
+    public void removeUser(Long userId) {
+        userRepo.deleteById(userId);
+    }
 }
