@@ -10,7 +10,12 @@ public class BookDetailsService {
 
     @Autowired
     private BookRepository bookRepo;
-
+    /**
+     * Loads a book from the book repository by its title.
+     *
+     * @param  title  the title of the book to load
+     * @return        the loaded book with its ID, title, and genre ID
+     */
     public Book loadBookByTitle(String title) {
         Book foundBook = bookRepo.findByTitle(title);
         if (foundBook == null) {
