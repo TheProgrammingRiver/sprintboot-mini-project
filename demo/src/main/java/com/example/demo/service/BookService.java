@@ -23,7 +23,13 @@ public class BookService {
     public Book fetchBook(Long id) {
         return bookRepo.findById(id).orElse(null);
     }
-
+    /**
+     * Updates the information of a book.
+     *
+     * @param  id           the ID of the book to update
+     * @param  updatedBook  the updated book information
+     * @return              the updated book, or null if no book was found
+     */
     public Book updateBookInfo(Long id, Book updatedBook) {
         if (bookRepo.existsById(id)) {
             updatedBook.setId(id);
