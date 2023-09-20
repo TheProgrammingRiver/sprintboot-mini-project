@@ -34,7 +34,13 @@ public class UserController {
         return userSrv.fetchUser(id);
 
     }
-
+    /**
+     * Update a user with the given ID.
+     *
+     * @param  id    the ID of the user to update
+     * @param  user  the updated user object
+     * @return       the updated user object
+     */
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
         return userSrv.updateUser(id, user);
