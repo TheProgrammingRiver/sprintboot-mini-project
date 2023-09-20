@@ -10,7 +10,12 @@ public class GenreDetailsService {
 
     @Autowired
     private GenreRepository genreRepo;
-
+    /**
+     * Loads a genre by its name.
+     *
+     * @param  name  the name of the genre to load
+     * @return       the loaded genre
+     */
     public Genre loadGenreBName(String name) {
         Genre foundGenre = genreRepo.findByName(name);
         if (foundGenre == null) {
