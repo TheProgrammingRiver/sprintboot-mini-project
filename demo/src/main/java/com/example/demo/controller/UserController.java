@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
+
     @Autowired
     private UserService userSrv;
 
@@ -31,10 +32,12 @@ public class UserController {
     @GetMapping("/{id}")
     public User fetchUser(@PathVariable Long id) {
         return userSrv.fetchUser(id);
+
     }
 
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
         return userSrv.updateUser(id, user);
     }
+
 }
