@@ -2,35 +2,27 @@ package com.example.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     private Long id;
-    private String Username;
-    private String Password;
+    private String username;
+    private String password;
 
-    public Long getId() {
-        return id;
-    }
 
     public void setId(Long id) {
         this.id = id;
     }
 
     public String getUsername() {
-        return Username;
-    }
-
-    public void setUsername(String username) {
-        Username = username;
+        return username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
-    public void setPassword(String password) {
-        Password = password;
-    }
 }
