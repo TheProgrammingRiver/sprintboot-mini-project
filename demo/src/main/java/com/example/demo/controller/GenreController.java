@@ -32,7 +32,13 @@ public class GenreController {
     public Genre fetchGenre(@PathVariable Long id) {
         return genreSrv.fetchGenre(id);
     }
-
+    /**
+     * Updates a genre with the given ID.
+     *
+     * @param  id     the ID of the genre to update
+     * @param  genre  the genre object with updated information
+     * @return        the updated genre object
+     */
     @PutMapping("/{id}")
     public Genre updateGenre(@PathVariable Long id, @RequestBody Genre genre) {
         return genreSrv.updateGenre(id, genre);
