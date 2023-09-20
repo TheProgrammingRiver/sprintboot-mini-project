@@ -23,7 +23,13 @@ public class GenreService {
     public Genre fetchGenre(Long id) {
         return repo.findById(id).orElse(null);
     }
-
+    /**
+     * Updates a genre with the specified ID.
+     *
+     * @param  id              the ID of the genre to update
+     * @param  updatedGenre    the updated genre object
+     * @return                 the updated genre object, or null if the genre with the specified ID does not exist
+     */
     public Genre updateGenre(Long id, Genre updatedGenre) {
         if (repo.existsById(id)) {
             updatedGenre.setId(id);
