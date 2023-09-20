@@ -32,7 +32,13 @@ public class BookController {
     public Book fetchBook(@PathVariable Long id) {
         return bookSrv.fetchBook(id);
     }
-
+    /**
+     * Updates the information of a book.
+     *
+     * @param  id   the ID of the book to be updated
+     * @param  book the updated book object
+     * @return      the updated book object
+     */
     @PutMapping("/{id}")
     public Book updateBookInfo(@PathVariable Long id, @RequestBody Book book) {
         return bookSrv.updateBookInfo(id, book);
