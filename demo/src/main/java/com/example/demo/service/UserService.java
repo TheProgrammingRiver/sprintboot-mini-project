@@ -26,7 +26,13 @@ public class UserService {
         public User fetchUser (Long id){
             return userRepo.findById(id).orElse(null);
         }
-
+    /**
+     * Updates a user in the system.
+     *
+     * @param  id             the ID of the user to update
+     * @param  updatedUser    the updated user object
+     * @return                the updated user object if the user exists, null otherwise
+     */
         public User updateUser (Long id, User updatedUser){
             if (userRepo.existsById(id)) {
                 updatedUser.setId(id);
