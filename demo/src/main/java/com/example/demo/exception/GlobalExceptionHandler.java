@@ -14,7 +14,13 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> handleCustomException(CustomException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
     }
-
+    /**
+     * Handles other exceptions that are not specifically handled by other exception handlers.
+     *
+     * @param  e  the exception that occurred
+     * @return    a ResponseEntity object containing a message indicating that an unexpected error occurred
+     *            along with the HTTP status code for internal server error
+     */
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public ResponseEntity<Object> handleOtherExceptions(Exception e) {
