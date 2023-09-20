@@ -10,6 +10,15 @@ public class Book {
     private String title;
     private Long genreId;
 
+    public Book(Long id, String title, Long genreId) {
+        this.id = id;
+        this.title = title;
+        this.genreId = genreId;
+    }
+
+    public Book() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -22,15 +31,8 @@ public class Book {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public Long getGenreId() {
         return genreId;
     }
 
-    public void setGenreId(Long genreId) {
-        this.genreId = genreId;
-    }
 }
