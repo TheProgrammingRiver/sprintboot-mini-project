@@ -12,7 +12,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Autowired
     private MyUserDetailsService myUserDetailsService;
-
+    /**
+     * Configure the HTTP security settings.
+     *
+     * @param  http  the HttpSecurity object to configure
+     * @throws Exception  if an error occurs during configuration
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
@@ -21,7 +26,12 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
     }
-
+    /**
+     * Configures the global authentication manager builder.
+     *
+     * @param  auth  the authentication manager builder
+     * @throws Exception  if an error occurs while configuring the authentication manager builder
+     */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(myUserDetailsService)
