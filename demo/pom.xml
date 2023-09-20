@@ -19,6 +19,13 @@
 	<!-- ___________________________________________________-->
 	<dependencies>
 
+		<!-- Remove this dependency to disable Spring Security -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
